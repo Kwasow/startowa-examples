@@ -1,17 +1,17 @@
-type Sprites = {
+export type Sprites = {
   back_default: string | null,
   back_female: string | null,
   front_default: string | null,
   front_female: string | null
 }
 
-type PokeType = {
+export type PokeType = {
   id: number,
   name: string,
   icon: string,
 }
 
-type Pokemon = {
+export type Pokemon = {
   id: number,
   name: string,
   base_experience: number,
