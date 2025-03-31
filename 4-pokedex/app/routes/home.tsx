@@ -1,4 +1,4 @@
-import { Box, Card, Grid2, Typography } from "@mui/material";
+import { Box, Card, Container, Grid2, Typography } from "@mui/material";
 import type { Route } from "./+types/home";
 import { pokedex, type Pokemon } from '../data/pokedex'
 
@@ -17,10 +17,14 @@ function PokemonItem(props: PokemonItemProps) {
   const pokemon = props.pokemon
 
   return <Card style={{ padding: 12 }}>
-    <img src={pokemon.sprites.front_default || ""} />
+    <Grid2 container direction="row" justifyContent="space-between">
+      <Typography>{pokemon.id}</Typography>
+      <img src={pokemon.types[0].icon} style={{ width: 100 }} />
+    </Grid2>
+    <Container>
+      <img src={pokemon.sprites.front_default || ""} style={{ alignItems: 'center' }}/>
+    </Container>
     <Typography variant="h3">{pokemon.name}</Typography>
-
-    <img src={pokemon.types[0].icon} style={{}} />
   </Card>
 }
 
